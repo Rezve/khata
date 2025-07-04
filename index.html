@@ -191,9 +191,10 @@
             folderList.innerHTML = '';
             Object.keys(folders).forEach(folder => {
                 const div = document.createElement('div');
+                div.onclick = () => openFolder(folder);
                 div.className = 'flex justify-between items-center p-2 bg-white rounded shadow';
                 div.innerHTML = `
-                    <span class="cursor-pointer" onclick="openFolder('${folder}')">${folder}</span>
+                    <span class="cursor-pointer">${folder}</span>
                     <button onclick="deleteFolder('${folder}')" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
                 `;
                 folderList.appendChild(div);
@@ -253,9 +254,10 @@
             noteList.innerHTML = '';
             folders[currentFolder].notes.forEach((note, index) => {
                 const div = document.createElement('div');
+                div.onclick = () => openNote(index);
                 div.className = 'flex justify-between items-center p-2 bg-white rounded shadow';
                 div.innerHTML = `
-                    <span class="cursor-pointer" onclick="openNote(${index})">${note.title || 'Untitled'}</span>
+                    <span class="cursor-pointer">${note.title || 'Untitled'}</span>
                     <button onclick="deleteNote(${index})" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
                 `;
                 noteList.appendChild(div);
