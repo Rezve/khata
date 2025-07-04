@@ -86,6 +86,10 @@
             border-color: var(--border-color);
         }
 
+        .inputColor {
+            color: var(--input-bg);
+        }
+
         #passwordModal .bg-white {
             background-color: var(--card-bg);
         }
@@ -114,9 +118,9 @@
     <div id="passwordModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
         <div class="bg-white p-6 rounded-lg shadow-lg w-80">
             <h2 id="passwordModalTitle" class="text-lg font-semibold mb-4">Set Password</h2>
-            <input type="password" id="passwordInput" class="w-full p-2 border rounded mb-4"
+            <input type="password" id="passwordInput" class="w-full p-2 border rounded mb-4 inputColor"
                 placeholder="Enter password">
-            <input type="password" id="confirmPasswordInput" class="w-full p-2 border rounded mb-4 hidden"
+            <input type="password" id="confirmPasswordInput" class="w-full p-2 border rounded mb-4 hidden inputColor"
                 placeholder="Confirm password">
             <div class="flex justify-end space-x-2">
                 <button id="passwordSubmit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
